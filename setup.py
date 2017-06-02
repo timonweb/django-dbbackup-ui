@@ -13,12 +13,8 @@ with open('HISTORY.md') as history_file:
 def get_requirements():
     return open('requirements.txt').read().splitlines()
 
-test_requirements = [
-    # TODO: put package test requirements here
-]
-
 setup(
-    name='dbbackup_ui',
+    name='django-dbbackup-ui',
     version='0.1.0',
     description="Backup database and media files via Django admin interface (includes Wagtail admin support)",
     long_description=readme + '\n\n' + history,
@@ -37,7 +33,7 @@ setup(
         'admin', 'wagtail', 'ui', 'download'
     ],
     classifiers=[
-        'Development Status :: 2 - Pre-Alpha',
+        'Development Status :: 3 - Alpha',
         'Environment :: Web Environment',
         'Framework :: Django',
         'Intended Audience :: Developers',
