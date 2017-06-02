@@ -1,0 +1,20 @@
+{% extends 'wagtailadmin/base.html' %}
+
+{% block content %}
+
+  <header class="">
+    <div class="row nice-padding">
+        <div class="left">
+            <div class="col header-title">
+                <h1 class="icon icon-user">{{ title }}</h1>
+            </div>
+        </div>
+        <div class="right"></div>
+    </div>
+  </header>
+
+  <div class="nice-padding">
+    {% include 'dbbackup_ui/_backup_forms.html' %}
+  </div>
+
+{% endblock content %}
