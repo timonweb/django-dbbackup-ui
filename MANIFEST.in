@@ -6,4 +6,6 @@ include README.md
 recursive-exclude * __pycache__
 recursive-exclude * *.py[co]
 
-recursive-include docs *.md conf.py Makefile make.bat *.jpg *.png *.gif
+recursive-include *.html *.css *.js *.py *.po *.mo *.json *.png *.gif *.otf *.eot *.svg *.ttf *.woff
+recursive-include dbbackup_ui/templates *
+recursive-include dbbackup_ui/wagtail/templates *

@@ -9,23 +9,21 @@ with open('README.md') as readme_file:
 with open('HISTORY.md') as history_file:
     history = history_file.read()
 
-
-def get_requirements():
-    return open('requirements.txt').read().splitlines()
-
 setup(
     name='django-dbbackup-ui',
-    version='0.1.0',
+    version='0.1.5',
     description="Backup database and media files via Django admin interface (includes Wagtail admin support)",
     long_description=readme + '\n\n' + history,
     author="Tim Kamanin",
     author_email='tim@timonweb.com',
-    url='https://github.com/timonweb/dbbackup_ui',
+    url='https://github.com/timonweb/django-dbbackup-ui',
     packages=find_packages(),
     package_dir={'dbbackup_ui':
                  'dbbackup_ui'},
     include_package_data=True,
-    install_requires=get_requirements(),
+    install_requires=[
+        'django-dbbackup>=3.1.3,<3.2'
+    ],
     license="BSD license",
     zip_safe=False,
     keywords=[
