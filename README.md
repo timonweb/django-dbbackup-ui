@@ -24,7 +24,7 @@ Install using PIP:
  ```
   urlpatterns = [
     url(r'^admin/backups/', include('dbbackup_ui.urls')),
-    url(r'^admin/', include(wagtailadmin_urls)),
+    url(r'^admin/', include(admin.site.urls)),
   ]
   ```
 
