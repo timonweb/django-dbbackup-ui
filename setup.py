@@ -11,7 +11,7 @@ with open('HISTORY.md') as history_file:
 
 setup(
     name='django-dbbackup-ui',
-    version='0.1.5',
+    version='0.2.1',
     description="Backup database and media files via Django admin interface (includes Wagtail admin support)",
     long_description=readme + '\n\n' + history,
     author="Tim Kamanin",
@@ -22,7 +22,7 @@ setup(
                  'dbbackup_ui'},
     include_package_data=True,
     install_requires=[
-        'django-dbbackup>=3.1.3,<3.2'
+        'django-dbbackup>=3.1.3,<3.3'
     ],
     license="BSD license",
     zip_safe=False,
