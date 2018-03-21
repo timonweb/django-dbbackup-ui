@@ -1,7 +1,20 @@
 from django.conf.urls import url
-from django.core.urlresolvers import reverse
-from wagtail.wagtailadmin.menu import MenuItem
-from wagtail.wagtailcore import hooks
+
+try:
+  from django.core.urlresolvers import reverse
+except ModuleNotFoundError:
+  from django.urls import reverse
+
+try:
+  from wagtail.wagtailadmin.menu import MenuItem
+except ModuleNotFoundError:
+  from wagtail.admin.menu import MenuItem
+
+try:
+  from wagtail.wagtailcore import hooks
+except ModuleNotFoundError:
+  from wagtail.core import hooks
+
 from ..views import BackupView
 
 
