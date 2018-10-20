@@ -4,12 +4,14 @@ import tarfile
 from dbbackup import utils
 from dbbackup.db.base import get_connector
 from django.core.files.storage import get_storage_class
-
+from dbbackup.settings import GPG_RECIPIENT
 
 def backup_database(database_name):
     connector = get_connector('default')
     filename = connector.generate_filename()
     outputfile = connector.create_dump()
+    if GPG_RECIPIENT:
+        outputfile, filename = utils.encrypt_file(outputfile, filename)
     compressed_file, filename = utils.compress_file(outputfile, filename)
     outputfile = compressed_file
     outputfile.seek(0)
